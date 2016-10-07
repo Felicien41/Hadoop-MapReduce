@@ -22,15 +22,24 @@ if(len(sys.argv) < 2):
 	print "Usage : "+sys.argv[0]+" FILE where FILE contains the words to count"
 	exit()
 
+#Sum an array of numbers
+def countOccurence(array):
+	sum = 0
+	for i in array:
+        	sum += i
+	return sum
+
 def reduce(list):
 	dict = {}
 	for map in list:
     		for key in map:
-        		if(key in finalDict):
-            			dict[key] = dict[key] + sumNumbersArray(map[key])
+			if(key in dict):
+            			dict[key] = dict[key] + countOccurence(map[key])
         		else:
-            			dict[key] = sumNumbersArray(map[key])
+            			dict[key] = countOccurence(map[key])
+
 	return dict
+
 
 #Ouverture et lecture du fichier
 text = open(sys.argv[1], 'r').read()
