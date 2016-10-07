@@ -1,7 +1,7 @@
 # coding: utf8
 import sys
 import re
-
+import collections
 
 def map(text):
 	#Creation d'un dictionnaire où la clef est le mot et la valeur est une liste de 1, chaque un représentant une occurence du mot
@@ -50,16 +50,11 @@ text = re.sub('\W+',' ', text )
 
 #Map phase
 mapList = map(text)
-print mapList
-
-#Shuffle / Sort phase
-#SORT HERE
 
 #REDUCE phase
 dictionnary = reduce(mapList)
 
-
-#Affichage du résultat
-for key in dictionnary:
-	print key + " " + str(dictionnary[key])
-
+#Tri et affichage du résultat
+d = collections.OrderedDict(sorted(dictionnary.items()))
+for k, v in d.items():
+     print k, v
