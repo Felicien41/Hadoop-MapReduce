@@ -2,7 +2,11 @@ import sys
 
 #Verification des arguments
 if(len(sys.argv) < 2):
-	print "Usage : sys.argv[1] FILE where FILE contains the words to count"
+	print "Usage : "+sys.argv[0]+" FILE where FILE contains the words to count"
 	exit()
 
-print "cioucou"
+
+#Ouverture et lecture du fichier
+text = open(sys.argv[1], 'r').read()
+
+print text
