@@ -22,7 +22,7 @@ if(len(sys.argv) < 2):
 	print "Usage : "+sys.argv[0]+" FILE where FILE contains the words to count"
 	exit()
 
-#Sum an array of numbers
+#Additionne les nombres du tableau
 def countOccurence(array):
 	sum = 0
 	for i in array:
